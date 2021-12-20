@@ -8,10 +8,14 @@ const MainLayout = ({children}) => {
         <div className="sidebar h-full bg-blue-100 p-4">
             <ul>
                 <li>
-                    
-                   <ActiveLink href="/clients">
+                   <ActiveLink href="/clients" activeClassName="text-primary-dark">
                       <a className="nav-link">Клиенты</a>
                    </ActiveLink>
+                </li>
+                <li>
+                    <ActiveLink href="/delivers" activeClassName="text-primary-dark">
+                       <a className="nav-link">Компании доставки</a>
+                    </ActiveLink>
                 </li>
                 <li>
                     <ActiveLink href="/requests" activeClassName="text-primary-dark">

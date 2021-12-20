@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+:root {
+  --color-primary-dark: #0070f3;
+  --color-primary: #0096c7;
+  --color-accent: #e30613;
+}
 html,
 body {
   padding: 0;
@@ -24,10 +31,15 @@ body {
 }
 .btn,
 .link-button {
-  border: 1px solid #0070f3;
+  border: 1px solid var(--color-primary-dark);
   padding: 4px 15px;
-  color: #0070f3;
+  color: var(--color-primary-dark);
   transition: all 0.3s ease-in-out;
+}
+
+.btn.btn-danger {
+  border-color: #c95b63;
+  color: #c95b63;
 }
 
 table {
@@ -40,4 +52,14 @@ table th {
   padding: 3px;
   border-top: 1px solid #ccc;
   font-size: 12px;
+}
+
+.field {
+  outline: none;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  width: 100%;
+}
+.field:focus {
+  border-color: var(--color-primary);
 }

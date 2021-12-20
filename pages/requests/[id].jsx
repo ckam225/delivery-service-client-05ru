@@ -1,8 +1,9 @@
-import { fetchRequest } from "../api/requests";
+// import { fetchRequest } from "../api/services/requests";
 import * as React from 'react'
 import GoodTable from "../../components/goods/GoodTable";
 import QuoteDeliveryCostTable from "../../components/requests/QuoteDeliveryCostTable";
 import Link from "next/link";
+import { VscArrowLeft } from "react-icons/vsc";
 
 
 const RequestDetailPage = ({request}) => {
@@ -24,9 +25,12 @@ const RequestDetailPage = ({request}) => {
     return <div className="w-full">
         <div className="p-5 flex justify-between items-center">
             <div className="flex">
-                <Link href="/requests">
-                    <a  className="link-button m-2">Назад</a>
-                </Link>
+            <Link href="/requests">
+                <a  className="flex items-center text-primary-dark m-2">
+                        <VscArrowLeft/>
+                        Назад
+                </a>
+            </Link>
             </div>
             
         </div>
@@ -82,11 +86,11 @@ const RequestDetailPage = ({request}) => {
 
 
 export async function getServerSideProps({params}){
-    console.log('params', params);
-    const res = await fetchRequest(params.id)
+    //console.log('params', params);
+   // const res = await fetchRequest(params.id)
     return {
         props: {
-          request: res.data
+          request: null
         }
     }
 }
